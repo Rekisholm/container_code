@@ -18,14 +18,14 @@ systemctl restart docker
 docker swarm init
 sudo docker swarm join-token manager
 sudo docker swarm join-token work
-#docker swarm join --token SWMTKN-1-65p0zhkx7o93kwsco8i7ndkc5pf8bxkonzs4vg1xxd0em1sh7j-774ifdytrxxvuk6bo7w7q29p8 192.168.200.13:2377
+  #docker swarm join --token SWMTKN-1-65p0zhkx7o93kwsco8i7ndkc5pf8bxkonzs4vg1xxd0em1sh7j-774ifdytrxxvuk6bo7w7q29p8 192.168.200.13:2377
 
 docker node ls
 
 docker pull traefik:v2.5
 
-！worker:
+！join as worker:
 docker swarm join --token SWMTKN-1-524fsalaaer6ur8rx1re8nvoubxnv8odj3hmtz6g551avzasou-98mkjibs7y7yeu8toskpofr3o 10.0.88.186:2377
 
-！mantainer:
+！join as mantainer:
 docker swarm join --token SWMTKN-1-524fsalaaer6ur8rx1re8nvoubxnv8odj3hmtz6g551avzasou-4lsdxizaqfxuyki6c7aoqx7wk 10.0.88.186:2377
