@@ -1,0 +1,25 @@
+echo 'net.ipv4.neigh.default.gc_thresh3 = 100000' | sudo tee -a /etc/sysctl.conf
+echo 'fs.aio-max-nr = 1048576' | sudo tee -a /etc/sysctl.conf
+echo 'net.core.somaxconn = 100000' | sudo tee -a /etc/sysctl.conf
+echo 'net.ipv4.tcp_max_syn_backlog = 100000' | sudo tee -a /etc/sysctl.conf
+echo 'net.core.netdev_max_backlog = 100000' | sudo tee -a /etc/sysctl.conf
+sysctl -p
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+
+vim /usr/lib/systemd/system/docker.service
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock
+systemctl daemon-reload
+systemctl restart docker
+
+docker swarm init
+sudo docker swarm join-token manager
+sudo docker swarm join-token work
+docker swarm join --token SWMTKN-1-65p0zhkx7o93kwsco8i7ndkc5pf8bxkonzs4vg1xxd0em1sh7j-774ifdytrxxvuk6bo7w7q29p8 192.168.200.13:2377
+
+docker node ls
+
+docker pull traefik:v2.5
