@@ -23,3 +23,5 @@ docker swarm join --token SWMTKN-1-65p0zhkx7o93kwsco8i7ndkc5pf8bxkonzs4vg1xxd0em
 docker node ls
 
 docker pull traefik:v2.5
+
+docker swarm join -- token SWMTKN-1-524fsalaaer6ur8rx1re8nvoubxnv8odj3hmtz6g551avzasou-98mkjibs7y7yeu8toskpofr30 10.0.88.186:2377
