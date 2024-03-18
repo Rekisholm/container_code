@@ -26,6 +26,7 @@ docker pull traefik:v2.5
 
 ！join as worker:
 docker swarm join --token SWMTKN-1-5hupqxt7tcte8fdclc8uey9vv1kpqm4dy2dk3rvlecfn26ntwq-2jxphtxtoohgsysse055wnbni 10.0.88.186:2377
-
+docker swarm join --token SWMTKN-1-1cuat6dvh8d7r26hzmennfkskgvufrzmjmem3hwysy1487qprb-3g976abp86bjv1mo2yb1d4cdb 10.2.0.186:2377
 ！join as mantainer:
 docker swarm join --token SWMTKN-1-5hupqxt7tcte8fdclc8uey9vv1kpqm4dy2dk3rvlecfn26ntwq-3t85025x03lqz2jy1tmlb1lff 10.0.88.186:2377
+docker swarm join --token SWMTKN-1-1cuat6dvh8d7r26hzmennfkskgvufrzmjmem3hwysy1487qprb-8d027ugz3i4m7dz42ftxc4872 10.2.0.186:2377
